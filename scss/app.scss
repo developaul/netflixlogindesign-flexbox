@@ -1,0 +1,224 @@
+@import 'variables';
+@import 'mixins';
+
+// Global
+html {
+    @include box-sizing( border-box );
+}
+
+*,
+*::after,
+*::before {
+    @include box-sizing( inherit );
+}
+
+body {
+    min-height: 100vh;
+    font-family: $firstFont;
+    background-color: $black;
+    color: $gray2;
+
+    @include tablet {
+        background-color: unset;
+        background-image: url( '../img/bg.jpg' );
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+}
+
+a {
+    color: $gray2;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.contenedor {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+// Header
+.logotipo {
+    margin-top: .5rem;
+    max-width: 180px;
+
+    @include tablet {
+        margin-top: .8rem;
+        margin-left: 2%;
+    }
+}
+
+
+// Form
+.formulario-login {
+    @include tablet {
+        background-color: rgba(0, 0, 0, .85);
+        width: 420px;
+        padding: 2rem 4rem;
+        margin: 2rem auto 4rem auto;
+    }
+}
+
+.formulario {
+    legend {
+        color: $white;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 2rem 0;
+    }
+
+    .campo {
+        position: relative;
+        display: flex;
+        margin-bottom: 1rem;
+
+        input {
+            flex: 1;
+            padding: 1.3rem 1rem .7rem 1rem;
+            background-color: $gray;
+            color: $white;
+            border: none;
+            border-radius: $radius;
+
+            &:focus {
+                background-color: $gray3;
+                outline: none;
+
+                + label {
+                    font-size: .6rem;
+                    top: .5rem;
+                }
+            }
+
+        }
+
+        label {
+            position: absolute;
+            top: 1.1rem;
+            left: 1rem;
+            font-size: .9rem;
+            transition: all .2s ease;
+        }
+
+        span {
+            position: absolute;
+            top: 1.1rem;
+            right: 1rem;
+            text-transform: uppercase;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .submit {
+        display: flex;
+        margin-top: 2rem;
+
+        input[type="submit"] {
+            @include button( $firstColor, $white );
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+
+    .acciones {
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem 0;
+        margin: .5rem 0 8rem 0;
+
+        a,
+        label{
+            font-size: .8rem;
+            text-decoration: none;
+        }
+    }
+}
+
+.contenido-inferior {
+    padding-bottom: 1rem;
+
+    @include tablet {
+        padding-bottom: 0;
+    }
+
+    a {
+        font-size: .8rem;
+    }
+
+    .nuevo-usuario {
+        display: flex;
+        font-size: 1rem;
+        margin-top: 1rem;
+        
+        a{
+            font-size: 1rem;
+            margin-left: 1rem;
+            color: $white;
+        }
+    }
+}
+
+
+// Footer
+.site-footer {
+    border-top: 1px solid $gray2;
+    padding: 2rem 0 4rem 0;
+
+    @include tablet {
+        border-top: unset;
+        background-color: rgba(0, 0, 0, .85);
+        padding: 1rem 0 3rem 0;
+    }
+
+    .contenedor {
+        @include desktop {
+            max-width: 50%;
+        }
+    }
+    
+    .menu-footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        @include desktop {
+            width: 60%;
+        }
+
+        @include tablet {
+            flex-direction: row;
+        }
+    
+        a {
+            flex: 0 0 auto;
+            font-size: .8rem;
+            margin-right: 2rem;
+            padding: .5rem 0;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    select {
+        margin-top: 2rem;
+        appearance: none;
+        padding: 1rem 3rem;
+        border: 1px solid $gray3;
+        border-radius: 5px;
+        font-size: .8rem;
+        background-color: $black;
+        color: $gray2;
+    }
+}
