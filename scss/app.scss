@@ -41,6 +41,19 @@ a {
     margin: 0 auto;
 }
 
+.alerta {
+    color: #E87C03;
+    display: block;
+    margin-bottom: .5rem;
+    padding: .2rem;
+    font-size: .8rem;
+    text-align: center;
+}
+  
+input.no-valido {
+    border-bottom: 5px solid #E87C03 !important;
+}
+
 
 // Header
 .logotipo {
@@ -103,6 +116,11 @@ a {
             left: 1rem;
             font-size: .9rem;
             transition: all .2s ease;
+
+            &.valido {
+                font-size: .6rem;
+                top: .5rem;
+            }
         }
 
         span {
