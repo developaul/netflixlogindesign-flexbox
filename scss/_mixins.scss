@@ -20,3 +20,15 @@
         @content;
     }
 }
+
+@mixin button( $bg-color, $color ) {
+    background-color: $bg-color;
+    color: $color;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: $radius;
+}
