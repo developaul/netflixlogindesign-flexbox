@@ -1,0 +1,54 @@
+@import 'variables';
+@import 'mixins';
+
+// Global
+html {
+    @include box-sizing( border-box );
+}
+
+*,
+*::after,
+*::before {
+    @include box-sizing( inherit );
+}
+
+body {
+    min-height: 100vh;
+    font-family: $firstFont;
+    background-color: $black;
+    color: $gray2;
+
+    @include tablet {
+        background-color: unset;
+        background-image: url( '../img/bg.jpg' );
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: cover;
+    }
+}
+
+a {
+    color: $gray2;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.contenedor {
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+// Header
+.logotipo {
+    margin-top: .5rem;
+    max-width: 180px;
+
+    @include tablet {
+        margin-top: .8rem;
+        margin-left: 2%;
+    }
+}
