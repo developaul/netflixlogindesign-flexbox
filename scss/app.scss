@@ -169,3 +169,56 @@ a {
 }
 
 
+// Footer
+.site-footer {
+    border-top: 1px solid $gray2;
+    padding: 2rem 0 4rem 0;
+
+    @include tablet {
+        border-top: unset;
+        background-color: rgba(0, 0, 0, .85);
+        padding: 1rem 0 3rem 0;
+    }
+
+    .contenedor {
+        @include desktop {
+            max-width: 50%;
+        }
+    }
+    
+    .menu-footer {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        
+        @include desktop {
+            width: 60%;
+        }
+
+        @include tablet {
+            flex-direction: row;
+        }
+    
+        a {
+            flex: 0 0 auto;
+            font-size: .8rem;
+            margin-right: 2rem;
+            padding: .5rem 0;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+        }
+    }
+
+    select {
+        margin-top: 2rem;
+        appearance: none;
+        padding: 1rem 3rem;
+        border: 1px solid $gray3;
+        border-radius: 5px;
+        font-size: .8rem;
+        background-color: $black;
+        color: $gray2;
+    }
+}
